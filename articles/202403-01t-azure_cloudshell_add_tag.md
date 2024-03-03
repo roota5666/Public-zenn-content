@@ -1,15 +1,15 @@
 ---
-title: "[小ネタ] Azure Cloud Shellで使用するストレージにタグを追加する"
+title: "Azure Cloud Shellで使用するストレージにタグを追加する"
 emoji: "🎈"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: [azure,cloudshell,小ネタ]
+topics: [azure,cloudshell]
 published: true
 publication_name: "ap_com"
 
 date: 2024-03-03
 url: "https://zenn.dev/roota5666/articles/202403-01t-azure_cloudshell_add_tag"
 tags: [" #Zenn #2024-03 "]
-aliases: 記事「[小ネタ] Azure CloudSHellで使用するストレージにタグを追加する」
+aliases: 記事「Azure CloudSHellで使用するストレージにタグを追加する」
 ---
 
 ## はじめに
