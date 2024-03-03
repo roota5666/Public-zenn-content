@@ -3,7 +3,7 @@ title: "[小ネタ] Azure Cloud Shellで使用するストレージにタグを�
 emoji: "🎈"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [azure,cloudshell,小ネタ]
-published: false
+published: true
 publication_name: "ap_com"
 
 date: 2024-03-03
