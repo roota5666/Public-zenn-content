@@ -18,7 +18,8 @@ Azure Cloud Shell で使用するストレージアカウントに任意のタ�
 
 ## 結論
 
-下記コマンドをAzure Cloud Shell(bash)で実行するとCloud Shellで使用しているストレージアカウントにタグが追加されます。
+下記コマンドをAzure Cloud Shell(bash)で実行するとAzure Cloud Shellで使用しているストレージアカウントにタグが追加されます。
+Azure Cloud Shellで使用しているストレージアカウントは、環境変数から取得するため一意です。
 
 ```bash
 tag_var="owner=roota@example.com"
@@ -65,9 +66,21 @@ Azure Cloud Shellの仕様で自動生成されたストレージアカウント
 
 そのため、任意のタグを付与すればわかりやすいと思ったので調べました。
 
-:::details 実施していること
-- $ACC_STORAGE_PROFILE とは？
-  `$ACC_STORAGE_PROFILE` は、環境変数で設定されている値です。
+実行ユーザーが不明のストレージアカウントが大量に発生・・
+![](/images/202403-01t-azure_cloudshell_add_tag/202403-01t-azure_cloudshell_add_tag_001.png)
+
+## 処理内容
+
+1. Azure Cloud Shellで使用されているストレージアカウントを環境変数から特定
+1. 特定したストレージアカウントにタグを追加
+
+:::details 処理詳細
+- $ACC_STORAGE_PROFILE
+  `$ACC_STORAGE_PROFILE` は、環境変数で設定されている値です。格納されている値は下記の通りです。
+  - storageAccountResourceId
+  - fileShareName
+  - diskSizeInGB
+  出力例
   ```bash
   r_ota [ ~/clouddrive ]$ echo $ACC_STORAGE_PROFILE | jq .
   {
