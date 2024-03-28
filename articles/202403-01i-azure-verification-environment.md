@@ -3,7 +3,7 @@ title: "Azure検証環境の管理手法案"
 emoji: "⚙️"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: [ "azure","アカウント管理"]
-published: false
+published: true
 publication_name: "ap_com"
 
 date: 2024-03-28
@@ -82,7 +82,7 @@ UIDはメールアドレスや社員番号などの重複のない番号です�
 タグ付けされました！
 ![](/images/202404-01t-azure-verification-environment/202404-01t-azure-verification-environment_003.png)
 
-### 設定している人のリスト取得
+### ownerタグが設定されたリソースグループのリスト取得
 
 ここからは管理者視点の操作です。Azure Cloud Shellを使ってownerタグが設定されているリソースグループの一覧を取得します。
 
@@ -145,7 +145,7 @@ r_ota [ ~ ]$
 
 ::::
 
-### 設定していない人のリスト
+### ownerタグが設定されていないリソースグループのリスト取得
 
 設定している人のリスト取得ができたので、タグが設定されていないリソースグループ一覧を取得します。
 
