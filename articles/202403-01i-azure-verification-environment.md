@@ -154,7 +154,7 @@ az group list --query "[?tags.owner == null ].name" \
               --output table | sort
 ```
 
-:::details 実行結果例
+実行結果例
 
 ```bash
 r_ota [ ~ ]$ az group list --query "[?tags.owner == null ].name" \
@@ -170,8 +170,6 @@ udemy_rg
 r_ota [ ~ ]$
 ```
 
-:::
-
 除外ver. cloud-shell-storage-*
 
 ```bash
@@ -179,11 +177,22 @@ az group list --query "[?tags.owner == null && name != 'cloud-shell-storage*' ].
               --output table | sort
 ```
 
-:::details 実行結果例
+実行結果例
 
-:::
+```bash
+r_ota [ ~ ]$ az group list --query "[?tags.owner == null ].name" \
+              --output table | sort
+---------------------------------------------------------
+domain
+poc_test
+rota-test
+sato-poc
+sendgrid_rg
+udemy_rg
+r_ota [ ~ ]$
+```
 
-ownerタグが設定されていないリソースグループについては、所有者を確認して削除やタグ付与の対応をしましょう。
+ownerタグが設定されていないリソースグループについては、削除や所有者を確認してタグ付与の対応をしましょう。
 
 ## 感想&まとめ
 
