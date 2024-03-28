@@ -18,7 +18,7 @@ aliases: 記事「Azure検証環境の管理手法案」
 
 ### やりたいこと
 
-検証環境の「誰が作ったresourceGroupなの！？」問題へ終止符を打つ！
+検証環境の「誰が作ったリソースグループなの！？」問題へ終止符を打つ！
 
 ## 環境
 
@@ -46,13 +46,14 @@ aliases: 記事「Azure検証環境の管理手法案」
 
 ### 管理手法案
 
-「resourceGroupにownerタグを付ける」
+「リソースグループにownerタグを付ける」
 
 これだけです。
 
 タグとは？
 
 >タグは、Azure リソースに適用するメタデータ要素です。 これらは、組織に関連する設定に基づいてリソースを識別するのに役立つキーと値のペアです。
+
 引用元 <https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/management/tag-resources>
 
 今回はownerというタグにUIDを記載します。
@@ -64,6 +65,7 @@ aliases: 記事「Azure検証環境の管理手法案」
 UIDはメールアドレスや社員番号などの重複のない番号です。
 
 >システムやサービスに利用者登録（アカウント作成）を行う際に設定する利用者名（ユーザー名/アカウント名）のことをUIDということがある。
+
 引用元 <https://e-words.jp/w/UID.html>
 
 ### タグ付け
@@ -73,9 +75,9 @@ UIDはメールアドレスや社員番号などの重複のない番号です�
 
 各リソースの左メニューに**タグ**があるはずです。
 
-リソースグループの例です。タグをクリック
+リソースグループの例です。タグをクリックします。
 ![](/images/202404-01t-azure-verification-environment/202404-01t-azure-verification-environment_001.png)
-名前と値を入力します
+名前と値を入力して適用をクリックします。
 ![](/images/202404-01t-azure-verification-environment/202404-01t-azure-verification-environment_002.png)
 タグ付けされました！
 ![](/images/202404-01t-azure-verification-environment/202404-01t-azure-verification-environment_003.png)
@@ -107,7 +109,7 @@ kobayashi   kobayashi@example.com
 r_ota [ ~ ]$ 
 ```
 
-:::details テスト用データ - リソースグループを10コ作る/消す
+::::details テスト用データ - リソースグループを10コ作る/消す
 
 :::message
 実行前に同じ名前のリソースグループが既に存在していないか注意してください
@@ -141,7 +143,7 @@ r_ota [ ~ ]$
   az group delete --yes --name kobayashi
   ```
 
-:::
+::::
 
 ### 設定していない人のリスト
 
@@ -152,6 +154,24 @@ az group list --query "[?tags.owner == null ].name" \
               --output table | sort
 ```
 
+:::details 実行結果例
+
+```bash
+r_ota [ ~ ]$ az group list --query "[?tags.owner == null ].name" \
+              --output table | sort
+---------------------------------------------------------
+cloud-shell-storage-southeastasia
+domain
+poc_test
+rota-test
+sato-poc
+sendgrid_rg
+udemy_rg
+r_ota [ ~ ]$
+```
+
+:::
+
 除外ver. cloud-shell-storage-*
 
 ```bash
@@ -159,21 +179,25 @@ az group list --query "[?tags.owner == null && name != 'cloud-shell-storage*' ].
               --output table | sort
 ```
 
+:::details 実行結果例
+
+:::
+
 ownerタグが設定されていないリソースグループについては、所有者を確認して削除やタグ付与の対応をしましょう。
 
 ## 感想&まとめ
 
 検証環境あるあるだと思いますが「だれが何の目的で作ったかわからないリソースがある」を少しでもなくせるように考えてみました。  
 自分でも「test-cent7」や「zabbix-test」など、後で見て何に使ったのかわからないリソースを見て、イラッとしたことがありました。。  
-ローカルのリソースなら電気代だけで済みますが、クラウドはたちあげっぱなし＝お金がチャリンチャリン使われていくことになります。  
-少しでも節約/効率的に使いたいですよね。  
-また、会社で使える検証環境をゴミだらけにしたくない！です。  
+
+ローカルのリソースなら電気代だけで済みますが、クラウドはたちあげっぱなし＝お金がチャリンチャリン使われていくことになります。少しでも節約/効率的に使いたいですよね。  
+また、会社で使える検証環境をゴミだらけにしたくない！  
 
 少しでも役に立てばうれしいです。  
 最後までお読みいただきありがとうございました。
 
 ## 参考サイト
 
-- @[card]()
-- @[card]()
-- @[card]()
+- @[card](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/management/tag-resources-portal)
+- @[card](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/management/tag-resources)
+- @[card](https://learn.microsoft.com/ja-jp/cli/azure/group?view=azure-cli-latest)
