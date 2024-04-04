@@ -2,7 +2,7 @@
 title: "行末コメントアウトのインデントをそろえる"
 emoji: "🖥️"
 type: "idea" # tech: 技術記事 / idea: アイデア
-topics: [ "vscode","整形"]
+topics: [ "vscode","文字列整形"]
 published: false
 
 date: 2024-04-04
@@ -99,7 +99,7 @@ yamlファイルなど、行末にコメントを記述できるファイルで�
 | 4   | 削除                             | [Del]              |
 | 5   | 矩形選択解除                     | [Esc]              |
 
-![](/images/202404-01i-commentout-backward-formatting/202404-01i-commentout-backward-formatting_003_before.gif)
+![](/images/202404-01i-commentout-backward-formatting/202404-01i-commentout-backward-formatting_003.gif)
 
 ## 感想
 
