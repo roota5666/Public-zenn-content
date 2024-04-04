@@ -3,7 +3,7 @@ title: "行末コメントアウトのインデントをそろえる"
 emoji: "🖥️"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: [ "vscode","文字列整形"]
-published: false
+published: true
 
 date: 2024-04-04
 url: "<https://zenn.dev/roota5666/articles/202404-01i-commentout-backward-formatting>"
@@ -15,17 +15,13 @@ aliases: 記事「行末コメントアウトのインデントをそろえる�
 
 本記事では、行末コメントアウトのインデントをそろえる方法について記載します。  
 yamlファイルなど、行末にコメントを記述できるファイルで「インデントそろえたいけど、スペースキー連打はツラい！！」  
-というときに調べた結果、たどりついた操作方法について記載します。
+というときの操作方法について記載します。
 
 ## 環境
 
 - Visual Studio Code
 
 ## やりたいこと
-
-発端のTweet
-
-@[tweet](https://twitter.com/roota5666/status/1651568805838192640?s=20)
 
 これを↓
 
