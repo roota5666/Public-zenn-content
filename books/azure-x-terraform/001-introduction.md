@@ -29,7 +29,7 @@ Terraformを1ミリも触ったことない自分の学習用に作成しまし�
 下記のGithubリポジトリに対応した教材ファイルを格納します。
 `git clone` してお使いください。
 
-<https://github.com/roota5666/book-contents_azure-x-terraform>
+https://github.com/roota5666/book-contents_azure-x-terraform
 
 ```bash
 mkdir clouddrive/git
