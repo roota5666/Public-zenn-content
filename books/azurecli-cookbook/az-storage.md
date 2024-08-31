@@ -3,7 +3,7 @@ title: "az storage"
 date: 2022-11-30
 url: "https://zenn.dev/roota5666/books/azurecli-cookbook/viewer/az-storage"
 tags:
-  - #yyyy-mm/2022-11
+  - "#yyyy-mm/2022-11"
 ---
 
 ## コマンドリファレンス

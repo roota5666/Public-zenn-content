@@ -3,7 +3,7 @@ title: "az group"
 date: 2022-11-30
 url: "https://zenn.dev/roota5666/books/azurecli-cookbook/viewer/az-group"
 tags:
-  - #yyyy-mm/2022-11
+  - "#yyyy-mm/2022-11"
 ---
 
 ## コマンドリファレンス

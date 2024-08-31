@@ -1,0 +1,15 @@
+title: "AzurexTerraform"
+summary: "AzureでTerraform使ってみた"
+topics: ["azure","terraform"]
+published: true
+price: 0 # 有料の場合200〜5000
+# 本に含めるチャプターを順番に並べましょう
+chapters:
+  - 001-introduction                    # まえがき
+  - lesson1                             # Lesson1 とりあえず作ってみよう
+  - lesson2                             # Lesson2 実行順番 依存関係の解決
+  - lesson3                             # Lesson3 ファイル分割
+#  - lesson4                             # Lesson4 環境変数の使用
+#  - lesson5                             # Lesson5 変数の使用
+#  - lesson10                            # Lesson10 tfファイルの作成について
+#  - lesson11                            # Lesson11

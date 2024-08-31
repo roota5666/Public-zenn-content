@@ -3,7 +3,7 @@ title: "az network nsg"
 date: 2023-04-27
 url: "https://zenn.dev/roota5666/books/azurecli-cookbook/viewer/az-network-nsg"
 tags:
-  - #yyyy-mm/2023-04
+  - "#yyyy-mm/2023-04"
 ---
 
 ## コマンドリファレンス

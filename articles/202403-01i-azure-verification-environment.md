@@ -5,11 +5,13 @@ type: "idea" # tech: 技術記事 / idea: アイデア
 topics: [ "azure","アカウント管理"]
 published: true
 publication_name: "ap_com"
-
 date: 2024-03-28
 url: "https://zenn.dev/roota5666/articles/202403-01i-azure-verification-environment"
-tags: ["#Zenn #2024-03"]
 aliases: 記事「Azure検証環境の管理手法案」
+tags:
+  - "#yyyy-mm/2024-03"
+  - "#web/site/zenn"
+  - "#tech/azure"
 ---
 
 ## はじめに

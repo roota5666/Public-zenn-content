@@ -4,10 +4,12 @@ emoji: "🖥️"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: [ "vscode","文字列整形"]
 published: true
-
 date: 2024-04-04
-url: "<https://zenn.dev/roota5666/articles/202404-01i-commentout-backward-formatting>"
-tags: ["#Zenn #2024-04"]
+url: "https://zenn.dev/roota5666/articles/202404-01i-commentout-backward-formatting"
+tags:
+  - "#yyyy-mm/2024-04"
+  - "#web/site/zenn"
+  - "#tool/vscode"
 aliases: 記事「行末コメントアウトのインデントをそろえる」
 ---
 

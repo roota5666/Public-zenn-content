@@ -5,10 +5,12 @@ type: "idea" # tech: 技術記事 / idea: アイデア
 topics: [ "zenn","vscode","執筆環境"]
 published: false
 publication_name: "ap_com"
-
 date: 2024-05-01
-url: "<https://zenn.dev/roota5666/articles/202405-01i-zenn-how-to-write>"
-tags: ["#Zenn #2024-05"]
+url: "https://zenn.dev/roota5666/articles/202405-01i-zenn-how-to-write"
+tags:
+  - "#yyyy-mm/2024-05"
+  - "#web/site/zenn"
+  - "#tool/vscode"
 aliases: 記事「私のZenn執筆環境 ～vscode.devの活用～」
 ---
 

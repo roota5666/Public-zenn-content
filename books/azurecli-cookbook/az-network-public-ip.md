@@ -3,7 +3,7 @@ title: "az network public-ip"
 date: 2024-08-31 21:38:08
 url: "https://zenn.dev/roota5666/books/azurecli-cookbook/viewer/az-network-public-ip"
 tags:
-  - #yyyy-mm/2024-08
+  - "#yyyy-mm/2024-08"
 ---
 
 ## コマンドリファレンス

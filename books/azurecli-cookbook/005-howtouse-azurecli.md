@@ -3,7 +3,7 @@ title: "Azure CLIの使い方"
 date: 2023-04-26
 url: "https://zenn.dev/roota5666/books/azurecli-cookbook/viewer/howtouse-azurecli"
 tags:
-  - #yyyy-mm/2023-04
+  - "#yyyy-mm/2023-04"
 ---
 
 ## Azure CLIとは？

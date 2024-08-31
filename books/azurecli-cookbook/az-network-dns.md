@@ -3,7 +3,7 @@ title: "az network dns"
 date: 2023-04-26
 url: "https://zenn.dev/roota5666/books/azurecli-cookbook/viewer/az-network-dns"
 tags:
-  - #yyyy-mm/2023-04
+  - "#yyyy-mm/2023-04"
 ---
 
 ## コマンドリファレンス

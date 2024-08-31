@@ -3,7 +3,7 @@ title: "az cdn"
 date: 2023-04-21
 url: "https://zenn.dev/roota5666/books/azurecli-cookbook/viewer/az-cdn"
 tags:
-  - #yyyy-mm/2023-04
+  - "#yyyy-mm/2023-04"
 ---
 
 ## コマンドリファレンス

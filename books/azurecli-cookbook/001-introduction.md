@@ -3,9 +3,9 @@ title: "はじめに"
 date: 2022-11-30
 url: "https://zenn.dev/roota5666/books/azurecli-cookbook/viewer/001-introduction"
 tags:
-  - #yyyy-mm/2022-11
-  - #web/site/zenn/book
-  - #tech/azure
+  - "#yyyy-mm/2022-11"
+  - "#web/site/zenn/book"
+  - "#tech/azure"
 ---
 
 ## まえがき

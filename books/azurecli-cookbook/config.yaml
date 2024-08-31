@@ -6,7 +6,6 @@ price: 0 # 有料の場合200〜5000
 # 本に含めるチャプターを順番に並べましょう
 chapters:
 # --序章ここから--
-#exclude# - 000-private # メモ
   - 001-introduction                    # まえがき
   - 005-howtouse-azurecli               # Azure Cloud Shellの使い方
 # --序章ここまで--
@@ -32,7 +31,7 @@ chapters:
 # - az-automanage                       # Automanage を管理します。
 # - az-automation                       # Automation アカウントを管理します。
 # - az-azurestackhci                    # azurestackhci を管理します。
-#exclude#  - az-backup                           # Azure バックアップを管理する。
+# - az-backup                           # Azure バックアップを管理する。
 # - az-baremetalinstance                # (プレビュー)BareMetal インスタンスを管理します。
 # - az-batch                            # Azure Batchの管理。
 # - az-batchai                          # Batch AI リソースを管理する。
@@ -120,7 +119,7 @@ chapters:
 # - az-healthcareapis                   # Healthcare Api を管理します。
 # - az-hpc-cache                        # hpc cache を管理するためのコマンド。
 # - az-hybridaks                        # Hybridaks のプロビジョニング済みクラスターを管理します。
-#exclude#   - az-identity                         # マネージド ID。
+# - az-identity                         # マネージド ID。
 # - az-image                            # カスタムの仮想マシン イメージを管理する。
 # - az-import-export                    # インポート エクスポートの管理。
 # - az-init                             # これは、構成用の簡単な設定ツールです。
@@ -130,7 +129,7 @@ chapters:
 # - az-k8s-configuration                # Microsoft.KubernetesConfiguration からリソースを管理するためのコマンド。
 # - az-k8s-extension                    # Kubernetes 拡張機能を管理するためのコマンド。
 # - az-k8sconfiguration                 # Kubernetes 構成を管理するためのコマンド。
-#exclude#   - az-keyvault                         # KeyVault キー、シークレット、証明書を管理します。
+# - az-keyvault                         # KeyVault キー、シークレット、証明書を管理します。
 # - az-kusto                            # Azure Kusto リソースを管理します。
 # - az-lab                              # Azure DevTest Labsの管理。
 # - az-load                             # Azure Load Testing リソースを管理します。
@@ -151,7 +150,7 @@ chapters:
 # - az-ml                               # Azure CLI ML 拡張機能 v2 を使用して Azure Machine Learning リソースを管理します。
 # - az-ml                               # Azure CLI ML 拡張機能 v1 を使用して Azure Machine Learning リソースを管理します。
 # - az-mobile-network                   # モバイル ネットワークを管理します。
-#exclude#   - az-monitor                          # Azure Monitor サービスを管理します。
+# - az-monitor                          # Azure Monitor サービスを管理します。
 # - az-mysql                            # Azure Database for MySQLサーバーを管理します。
 # - az-netappfiles                      # Azure NetApp Files (ANF) リソースを管理します。
 #####
@@ -166,7 +165,7 @@ chapters:
 # - az-network-nic
   - az-network-nsg
 # - az-network-private-dns
-# - az-network-public-ip
+  - az-network-public-ip
   - az-network-vnet
 ######
 # - az-network-function                 # ネットワーク機能を管理します。
