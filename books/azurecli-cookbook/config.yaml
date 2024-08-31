@@ -166,7 +166,7 @@ chapters:
 # - az-network-nic
   - az-network-nsg
 # - az-network-private-dns
-# - az-network-public-ip
+  - az-network-public-ip
   - az-network-vnet
 ######
 # - az-network-function                 # ネットワーク機能を管理します。
