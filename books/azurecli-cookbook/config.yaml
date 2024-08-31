@@ -1,0 +1,241 @@
+title: "Azure CLI クックブック"
+summary: "Azure CLI使ってみたい！ でも、コマンド分からないし・・　そんなときにとりあえずコピペで打てるコマンドを集めてみました。"
+topics: ["azure","azurecli","cloudshell"]
+published: true
+price: 0 # 有料の場合200〜5000
+# 本に含めるチャプターを順番に並べましょう
+chapters:
+# --序章ここから--
+#exclude# - 000-private # メモ
+  - 001-introduction                    # まえがき
+  - 005-howtouse-azurecli               # Azure Cloud Shellの使い方
+# --序章ここまで--
+# https://learn.microsoft.com/ja-jp/cli/azure/reference-index?view=azure-cli-latest
+  - az-account                          # Azure サブスクリプション情報を管理します。
+# - az-acr                              # Azure Container Registries を使用してプライベート レジストリを管理します。
+# - az-ad                               # ロール ベースのAccess Controlに必要な Azure Active Directory Graph エンティティを管理します。
+# - az-adp                              # Azure Autonomous Development Platform リソースを管理します。
+# - az-advisor                          # Azure Advisor を管理します。
+# - az-afd                              # Azure Front Door Standard/Premium を管理します。 従来の Azure Front Door については、 を参照してください https://docs.microsoft.com/en-us/cli/azure/network/front-door?view=azure-cli-latest。
+# - az-ai-examples                      # AI を使用した例をヘルプ コンテンツに追加します。
+# - az-aks                              # Azure Kubernetes Service を管理します。
+# - az-alias                            # Azure CLI エイリアスを管理する。
+# - az-ams                              # Azure Media Services リソースを管理します。
+# - az-apim                             # Azure API Management サービスを管理する。
+# - az-appconfig                        # アプリ構成を管理する。
+# - az-appservice                       # App Service プランを管理します。
+# - az-arcappliance                     # アプライアンス リソースを管理するコマンド。
+# - az-arcdata                          # Azure Arc 対応データ サービスを使用するためのコマンド。
+# - az-aro                              # Azure Red Hat OpenShift クラスターを管理します。
+# - az-artifacts                        # Azure Artifacts を管理します。
+# - az-attestation                      # Microsoft Azure Attestation (MAA) を管理します。
+# - az-automanage                       # Automanage を管理します。
+# - az-automation                       # Automation アカウントを管理します。
+# - az-azurestackhci                    # azurestackhci を管理します。
+#exclude#  - az-backup                           # Azure バックアップを管理する。
+# - az-baremetalinstance                # (プレビュー)BareMetal インスタンスを管理します。
+# - az-batch                            # Azure Batchの管理。
+# - az-batchai                          # Batch AI リソースを管理する。
+# - az-bicep                            # Bicep CLI コマンド グループ。
+# - az-billing                          # Azure Billing を管理する。
+# - az-billing-benefits                 # Azure の課金特典コマンド。
+# - az-blockchain                       # ブロックチェーンを管理します。
+# - az-blueprint                        # ブループリントを管理するコマンド。
+# - az-boards                           # Azure Boards を管理します。
+# - az-bot                              # Microsoft Azure Bot Serviceを管理します。
+# - az-cache                            # 引数を使用してキャッシュされた CLI オブジェクトを管理する --defer コマンド。
+# - az-capacity                         # 容量リソースを管理します。
+  - az-cdn                              # Azure Content Delivery Network (CDN) を管理します。
+# - az-change-analysis                  # リソースの変更を一覧表示します。
+# - az-cli-translator                   # ARM テンプレートまたは REST API を CLI スクリプトに変換します。
+# - az-cloud                            # 登録済みの Azure クラウドを管理します。
+# - az-cloud-service                    # クラウド サービス (延長サポート) を管理します。
+# - az-cognitiveservices                # Azure Cognitive Services アカウントを管理する。
+# - az-communication                    # 通信を使用して通信サービスを管理します。
+# - az-confcom                          # Azure で機密コンテナーのセキュリティ ポリシーを生成するコマンド。
+# - az-confidentialledger               # Confidential Ledger を管理します。
+# - az-config                           # Azure CLI の構成を管理します。
+# - az-configure                        # Azure CLI の構成を管理します。 このコマンドは対話型です。
+# - az-confluent                        # confluent リソースを管理します。
+# - az-connectedk8s                     # 接続された kubernetes クラスターを管理するためのコマンド。
+# - az-connectedmachine                 # 接続されたマシンを管理します。
+# - az-connectedvmware                  # 接続された VMware を管理するコマンド。
+# - az-connection                       # ローカル環境で Azure Resource に接続できるようにする Service Connector ローカル接続を管理するためのコマンド。 コンピューティング サービスの接続を管理する場合は、'az webapp/containerapp/spring connection' を実行してください。
+# - az-consumption                      # Azure リソースの消費を管理する。
+# - az-container                        # Azure Container Instancesの管理。
+# - az-containerapp                     # Azure Container Apps を管理します。
+# - az-cosmosdb                         # Azure Cosmos DB データベース アカウントを管理します。
+# - az-costmanagement                   # Azure でコストと課金を管理する。
+# - az-csvmware                         # Azure VMware Solution by CloudSimple を管理します。
+# - az-custom-providers                 # カスタム プロバイダーを管理するコマンド。
+# - az-customlocation                   # CustomLocations の作成、取得、一覧表示、削除を行うコマンド。
+# - az-databox                          # データ ボックスを管理します。
+# - az-databoxedge                      # データ ボックス エッジ デバイスと管理をサポートします。
+# - az-databricks                       # databricks ワークスペースを管理します。
+# - az-datadog                          # datadog を管理します。
+# - az-datafactory                      # Data Factory を管理します。
+# - az-datamigration                    # データ移行を管理します。
+# - az-dataprotection                   # データ保護を管理します。
+# - az-datashare                        # Data Shareを管理します。
+# - az-dedicated-hsm                    # ハードウェア セキュリティ モジュールを使用して専用 HSM を管理します。
+# - az-demo                             # Azure CLI の設計、開発、デモのデモ。
+# - az-deployment                       # サブスクリプション スコープで Azure Resource Manager テンプレートのデプロイを管理します。
+# - az-deployment-scripts               # サブスクリプションまたはリソース グループスコープでデプロイ スクリプトを管理します。
+# - az-desktopvirtualization            # デスクトップ仮想化を管理する。
+# - az-devcenter                        # devcenter を使用してリソースを管理します。
+# - az-devops                           # Azure DevOps organization レベルの操作を管理します。
+  - az-disk                             # Azure Managed Disksを管理します。
+# - az-disk-access                      # ディスク アクセス リソースを管理します。
+# - az-disk-encryption-set              # ディスク暗号化セット リソース。
+# - az-disk-pool                        # Azure ディスク プールを管理します。
+# - az-dla                              # アカウント、ジョブ、カタログData Lake Analytics管理します。
+# - az-dls                              # Data Lake Store アカウントとファイルシステムを管理します。
+# - az-dms                              # Azure Data Migration Service (クラシック) インスタンスを管理します。
+# - az-dnc                              # 委任されたネットワークを管理します。
+# - az-dns-resolver                     # Dns リゾルバーを管理します。
+# - az-dt                               # Azure Digital Twins のソリューションとインフラストラクチャを管理します。
+# - az-dynatrace                        # dynatrace を管理します。
+# - az-edgeorder                        # Edge Order を管理します。
+# - az-elastic                          # Microsoft Elastic を管理します。
+# - az-elastic-san                      # Elastic SAN を管理します。
+# - az-eventgrid                        # Azure Event Gridトピック、ドメイン、ドメイン トピック、システム トピック パートナー トピック、イベント サブスクリプション、システム トピック イベント サブスクリプション、パートナー トピック イベント サブスクリプションを管理します。
+# - az-eventhubs                        # Sss。
+# - az-extension                        # CLI 拡張機能を管理および更新します。
+# - az-feature                          # リソース プロバイダーの機能を管理します。
+# - az-feedback                         # Azure CLI チームにフィードバックを送信します。
+# - az-find                             # 私は AI ロボットです。私のアドバイスは、Azure のドキュメントと、Azure CLI と Azure ARM ユーザーの使用パターンに基づいています。 私を使用すると、Azure の製品とドキュメントが改善されます。
+# - az-fleet                            # フリートを管理するためのコマンド。
+# - az-fluid-relay                      # Fluid Relay を管理します。
+# - az-footprint                        # 
+# - az-functionapp                      # 関数アプリを管理します。 Azure Functions Core ツールをインストールするには、「」を参照してくださいhttps://github.com/Azure/azure-functions-core-tools。
+# - az-fzf                              # fzf を使用してアクティブまたは既定のオブジェクトを選択するコマンド。
+# - az-grafana                          # Azure Grafana インスタンスを管理するためのコマンド。
+# - az-graph                            # Azure Resource Manager によって管理されているリソースに対してクエリを実行します。
+  - az-group                            # リソース グループとテンプレートのデプロイを管理します。
+# - az-guestconfig                      # ゲスト構成の管理。
+# - az-hack                             # 学生のハッキングでよく使用されるリソースを管理するためのコマンド。
+# - az-hanainstance                     # (プレビュー)Azure SAP HANA インスタンスを管理します。
+# - az-hdinsight                        # HDInsight リソースを管理します。
+# - az-healthbot                        # healthbot を使用してボットを管理する。
+# - az-healthcareapis                   # Healthcare Api を管理します。
+# - az-hpc-cache                        # hpc cache を管理するためのコマンド。
+# - az-hybridaks                        # Hybridaks のプロビジョニング済みクラスターを管理します。
+#exclude#   - az-identity                         # マネージド ID。
+# - az-image                            # カスタムの仮想マシン イメージを管理する。
+# - az-import-export                    # インポート エクスポートの管理。
+# - az-init                             # これは、構成用の簡単な設定ツールです。
+# - az-interactive                      # 対話型モードを開始します。 まだインストールされていない場合は、Interactive 拡張機能をインストールします。
+# - az-internet-analyzer                # インターネット アナライザーを管理するためのコマンド。
+# - az-iot                              # モノのインターネット (IoT) 資産を管理します。
+# - az-k8s-configuration                # Microsoft.KubernetesConfiguration からリソースを管理するためのコマンド。
+# - az-k8s-extension                    # Kubernetes 拡張機能を管理するためのコマンド。
+# - az-k8sconfiguration                 # Kubernetes 構成を管理するためのコマンド。
+#exclude#   - az-keyvault                         # KeyVault キー、シークレット、証明書を管理します。
+# - az-kusto                            # Azure Kusto リソースを管理します。
+# - az-lab                              # Azure DevTest Labsの管理。
+# - az-load                             # Azure Load Testing リソースを管理します。
+# - az-lock                             # Azure ロックを管理します。
+# - az-logic                            # ロジックを管理します。
+# - az-logicapp                         # ロジック アプリを管理する。
+# - az-login                            # Azure にログインします。
+# - az-logout                           # ログアウトして、Azure サブスクリプションへのアクセスを削除します。
+# - az-logz                             # Microsoft Logz を管理します。
+# - az-maintenance                      # メンテナンスの管理。
+# - az-managed-cassandra                # Azure Managed Cassandra。
+# - az-managedapp                       # 独立系ソフトウェア ベンダー (ISV) によって提供および管理されるテンプレート ソリューションを管理します。
+# - az-managedservices                  # Azure で登録の割り当てと定義を管理します。
+# - az-managementpartner                # パートナーが Microsoft Partner Network (MPN) ID を顧客の Azure ディレクトリ内のユーザーまたはサービス プリンシパルに関連付けることができます。
+# - az-maps                             # Azure Maps を管理します。
+# - az-mariadb                          # Azure Database for MariaDB サーバーを管理します。
+# - az-mesh                             # (プレビュー)Azure Service Fabric Mesh リソースを管理します。
+# - az-ml                               # Azure CLI ML 拡張機能 v2 を使用して Azure Machine Learning リソースを管理します。
+# - az-ml                               # Azure CLI ML 拡張機能 v1 を使用して Azure Machine Learning リソースを管理します。
+# - az-mobile-network                   # モバイル ネットワークを管理します。
+#exclude#   - az-monitor                          # Azure Monitor サービスを管理します。
+# - az-mysql                            # Azure Database for MySQLサーバーを管理します。
+# - az-netappfiles                      # Azure NetApp Files (ANF) リソースを管理します。
+#####
+# az-network                            # Azure ネットワーク リソースを管理します。
+# https://learn.microsoft.com/ja-jp/cli/azure/network?view=azure-cli-latest
+#####
+  # - az-network-application-gateway
+  # - az-network-bastion
+  - az-network-dns
+  # - az-network-firewall
+  - az-network-lb
+# - az-network-nic
+  - az-network-nsg
+# - az-network-private-dns
+# - az-network-public-ip
+  - az-network-vnet
+######
+# - az-network-function                 # ネットワーク機能を管理します。
+# - az-next                             # 実行するコマンドの次のセットを推奨します。
+# - az-nginx                            # NGINX デプロイ リソースを管理します。
+# - az-notification-hub                 # Notification Hubs を管理します。
+# - az-offazure                         # 移行のためにオンプレミスリソースを管理する。
+# - az-orbital                          # Azure Orbital Ground Station as-a-Service (GSaaS)。
+# - az-peering                          # ピアリングを管理します。
+# - az-pipelines                        # Azure Pipelines を管理します。
+# - az-policy                           # リソース ポリシーを管理します。
+# - az-portal                           # ポータルを管理します。
+# - az-postgres                         # Azure Database for PostgreSQL サーバーを管理します。
+# - az-powerbi                          # PowerBI リソースを管理する。
+# - az-ppg                              # 近接配置グループを管理します。
+# - az-private-link                     # Private-link association CLI コマンド グループ。
+# - az-provider                         # リソース プロバイダーを管理します。
+# - az-providerhub                      # ProviderHub を使用してリソースを管理します。
+# - az-purview                          # Purview を管理します。
+# - az-quantum                          # Azure Quantum ワークスペースを管理し、Azure Quantum プロバイダーにジョブを送信します。
+# - az-quota                            # Azure Quota Extension API を管理します。
+# - az-redis                            # Azure アプリケーションの専用 Redis キャッシュを管理します。
+# - az-redisenterprise                  # Azure アプリケーションの専用 Redis Enterprise キャッシュを管理します。
+# - az-relay                            # Azure Relay Service 名前空間、WCF リレー、ハイブリッド接続、ルールを管理します。
+# - az-remote-rendering-account         # Mixed Reality を使用してリモート レンダリング アカウントを管理します。
+# - az-repos                            # Azure Repos を管理します。
+# - az-reservations                     # Azure の予約。
+# - az-resource                         # Azure のリソースを管理します。
+# - az-resource-mover                   # Resource Mover Service API を管理します。
+# - az-resourcemanagement               # Resourcemanagement CLI コマンド グループ。
+# - az-rest                             # カスタム要求を呼び出します。
+# - az-restore-point                    # res を使用して復元ポイントを管理します。
+# - az-role                             # Azure Active Directory とサービス プリンシパルを使用してアクセス制御のユーザー ロールを管理します。
+# - az-sapmonitor                       # (プレビュー)Azure SAP Monitor を管理します。
+# - az-scenario                         # E2E シナリオの使用ガイダンス。
+# - az-scvmm                            # Arc for SCVMM リソースを管理するためのコマンド。
+# - az-search                           # Azure Search サービス、管理者キー、クエリ キーを管理します。
+# - az-security                         # Microsoft Defender for Cloud を使用してセキュリティ体制を管理します。
+# - az-self-test                        # CLI の自己テストを実行します。
+# - az-sentinel                         # Microsoft Sentinel を管理します。
+# - az-serial-console                   # Linux/Windows 仮想マシンまたは VMSS インスタンスのシリアル コンソールに接続します。
+# - az-service-networking               # サービス ネットワーク リソースを管理します。
+# - az-servicebus                       # Servicebus。
+# - az-sf                               # Azure Service Fabric クラスターの管理と管理。
+# - az-sig                              # 共有イメージ ギャラリーを管理します。
+# - az-signalr                          # Azure SignalR Serviceの管理。
+# - az-snapshot                         # マネージド ディスク、ネイティブ BLOB、またはその他のスナップショットの特定時点のコピーを管理します。
+# - az-spatial-anchors-account          # Mixed Reality を使用して空間アンカー アカウントを管理します。
+# - az-spring                           # Azure Spring Apps を管理するためのコマンド。
+# - az-spring-cloud                     # Azure Spring Cloud を管理するためのコマンド。
+# - az-sql                              # Azure SQL データベースとデータ ウェアハウスを管理します。
+# - az-ssh                              # AAD で発行された opensh 証明書を使用してリソース (Azure VM、Arc サーバーなど) に SSH 接続します。
+# - az-sshkey                           # vm を使用して ssh 公開キーを管理します。
+# - az-stack-hci                        # Azure Stack HCI を管理します。
+# - az-staticwebapp                     # 静的アプリを管理します。
+  - az-storage                          # Azure Cloud Storage リソースを管理します。
+# - az-storage-mover                    # 最上位の Storage Mover リソースを管理します。
+# - az-storagesync                      # Azure File Syncの管理。
+# - az-stream-analytics                 # Stream Analytics を管理します。
+# - az-support                          # リソースAzure サポート管理します。
+# - az-survey                           # Azure CLI アンケートを受け取ります。
+# - az-tag                              # リソースのタグ管理。
+# - az-term                             # marketplaceordering を使用して Marketplace 契約を管理します。
+# - az-ts                               # サブスクリプションまたはリソース グループ スコープでテンプレート スペックを管理します。
+# - az-tsi                              # Azure Time Series Insights を管理します。
+# - az-upgrade                          # Azure CLI と拡張機能をアップグレードします。
+# - az-version                          # Azure CLI モジュールと拡張機能のバージョンを既定で JSON 形式で表示するか、--output で構成された形式で表示します。
+  - az-vm                               # Linux または Windows 仮想マシンを管理します。
+# - az-vmss                             # Azure Virtual Machine Scale Set (VMSS) 内の仮想マシンのグループ化を管理します。
+# - az-vmware                           # Azure VMware Solutionを管理するコマンド。
+# - az-webapp                           # Web アプリを管理します。
+# - az-webpubsub                        # Webpubsub を管理するコマンド。
