@@ -13,9 +13,13 @@ aliases:
   - 記事「AzureでTerraformを久しぶりに実行したらエラーになった件」
 ---
 
-## はじめに結論
+## はじめに
 
-AzureでCloud ShellからTerraformを久しぶりに実行したらエラーになりましたので、解決しましたので記事にしました。
+こちらは [エーピーコミュニケーションズ Advent Calendar 2024](https://qiita.com/advent-calendar/2024/ap-com) の 8 日目の記事となります。
+
+## 結論
+
+AzureでCloud ShellからTerraformを久しぶりに実行したらエラーになりました。
 結論としては、azurerm providerでsubscription_idの指定が必要でした。
 
 ```diff
@@ -121,13 +125,16 @@ provider "azurerm" {
 }
 ```
 
-> [!NOTE]subscription_idを表示させる一例
+> :::message
+> subscription_idを表示させる一例
 >
 > ```bash
 > r_ota [ ~ ]$  az account list --output json | jq -r .[].id
 > 12345abc-1234-abcd-1234-12345abcdef1
 > r_ota [ ~ ]$
 > ```
+> 
+> :::
 
 ### 変更箇所調査
 
@@ -150,6 +157,6 @@ provider "azurerm" {
 
 ## 宣伝
 
-こちらもよろしくお願いします。
+AzurexTerraformのZenn本です。こちらもよろしくお願いします。
 
 - @[card](https://zenn.dev/roota5666/books/azure-x-terraform)
