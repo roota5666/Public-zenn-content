@@ -4,7 +4,7 @@ title: "AzureでTerraformを久しぶりに実行したらエラーになった�
 emoji: "😖"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [ azure,terraform]
-published: false # published_at: "{{date:YYYY-MM-DD}}" # publication_name: "ap_com"
+published: true # published_at: "{{date:YYYY-MM-DD}}" # publication_name: "ap_com"
 
 url: "https://zenn.dev/roota5666/articles/20241208-01t-azurexterraform-subscriptionid"
 tags:
