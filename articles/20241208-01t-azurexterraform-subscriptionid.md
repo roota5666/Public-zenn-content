@@ -31,7 +31,7 @@ provider "azurerm" {
 
 ## 環境
 
-- :::details terraform
+- :::details Terraform v1.9.5
 
   ```bash
   r_ota [ ~ ]$ terraform -v 
@@ -46,7 +46,7 @@ provider "azurerm" {
 
   :::
 
-- :::details Azure CLI
+- :::details azure-cli 2.65.0
 
   ```bash
   r_ota [ ~ ]$ az --version
@@ -127,14 +127,13 @@ provider "azurerm" {
 
 > :::message
 > subscription_idを表示させる一例
+> Azure CLIで下記コマンドを実行する
 >
 > ```bash
 > r_ota [ ~ ]$  az account list --output json | jq -r .[].id
 > 12345abc-1234-abcd-1234-12345abcdef1
 > r_ota [ ~ ]$
 > ```
-> 
-> :::
 
 ### 変更箇所調査
 
@@ -145,9 +144,9 @@ provider "azurerm" {
 
 ## 感想&まとめ
 
-- 以前動いたコードが動かなくなることがある、認識はあったが久しぶりに当てました。。
-- エラー文がわかりやすくてよかったです
-- AzurexTerraform は情報が少ないですね。。
+- 以前動いたコードが動かなくなること・・・ はたまにあること、ですが久しぶりに当たってちょっとハマりました。。
+- エラー文がわかりやすくてよかったです。
+- AzurexTerraform は情報が少ない印象です。。
 
 最後までお読みいただきありがとうございました。
 
