@@ -3,26 +3,12 @@ title: "ansible ping モジュールを使った疎通確認"
 emoji: "🅰"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["ansible"]
-published: false
+published: true
 publication_name: "ap_com"
 url: "https://zenn.dev/roota5666/articles/202506-01t-ansibleping"
 author: roota5666
 description: "ansible ping モジュールを使った疎通確認でansible-playbookコマンドでplaybookを指定した場合と、直接ansibleコマンドでmoduleを指定した場合の出力結果の見やすさにフォーカスして結果を比較してみた"
 ---
-
-## 🎉結論
-
-ターゲットホストが多いときに、ansibleでping moduleを使う際は
-
-```bash
-ansible-playbook -i 【インベントリファイル】 【ping module用プレイブック】
-```
-
-が見やすい！
-
-## ⚙️環境
-
-- ansible [core 2.18.4]
 
 ## 👀シチュエーション
 
@@ -34,34 +20,19 @@ ansibleを使っていると
 ことがよくあります。(あるんです！)
 
 そんな時に [ansible.builtin.ping module](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/ping_module.html) を使います。
+しかし、毎回「どうやって使うんだっけ(-ω-;)」 「見やすい出力は(・・?」となるので、改めて検証してみました。
 
-:::details ansible.builtin.ping module 概要
+## ⚙️環境
 
-このモジュールは単純なテストモジュールで、pong接続に成功すると常に戻り値を返します。プレイブックでは意味がありませんが、/usr/bin/ansibleログインできることと、使用可能なPythonが設定されていることを確認するのに役立ちます。
-
-これは ICMP ping ではなく、リモート ノードで Python を必要とする単純なテスト モジュールです。
-
-Windows ターゲットの場合は、代わりにansible.windows.win_pingモジュールを使用します。
-
-ネットワーク ターゲットの場合は、代わりにansible.netcommon.net_pingモジュールを使用します。
-
----
-
-A trivial test module, this module always returns pong on successful contact. It does not make sense in playbooks, but it is useful from /usr/bin/ansible to verify the ability to login and that a usable Python is configured.
-
-This is NOT ICMP ping, this is just a trivial test module that requires Python on the remote-node.
-
-For Windows targets, use the ansible.windows.win_ping module instead.
-
-For Network targets, use the ansible.netcommon.net_ping module instead.
-
-:::
+- ansible [core 2.18.4]
 
 ## 🧪検証
 
 ### 1. ansibleコマンドで直接指定
 
-`ansible` コマンドで直接インベントリファイル/実行するmoduleを指定します。
+- 実行内容
+  `ansible` コマンドで直接インベントリファイル/実行するmoduleを指定します。  
+メリットはping用のplaybookをわざわざ作成しなくてもよい点です。
 
 :::details テスト用インベントリファイル
 
@@ -91,6 +62,12 @@ all:
 
 :::
 
+- 実行例
+
+  ```bash
+  ansible -i host.yml ,all -m ansible.builtin.ping
+  ```
+
 - 出力例
 
   ```bash
@@ -118,11 +95,12 @@ all:
   r_ota [ ~ ]$ 
   ```
 
-  -> 複数行で結果が出力され、5対象くらいなら目視で確認できますが10対象超えるとツラそう・・・
+- 結果 -> 複数行で結果が出力され、5対象くらいなら目視で確認できますが10対象超えるとツラそう・・・
 
 ### 2. ansible-playbookコマンドでplaybookを実行する
 
-`ansible-playbook` インベントリファイルとping moduleを記述したplaybookを実行します。
+- 実行内容
+  `ansible-playbook` インベントリファイルとping moduleを記述したplaybookを実行します。
 
 :::details ping moduleを記述したplaybook
 
@@ -139,31 +117,42 @@ all:
 
 :::
 
-```bash
-r_ota [ ~ ]$ ansible-playbook -i host.yml ping.yml 
 
-PLAY [all] **********************************************************************************************************************************************************************************************************************************
+- 実行例
 
-TASK [ping] *********************************************************************************************************************************************************************************************************************************
-ok: [localhost3]
-ok: [localhost5]
-ok: [localhost1]
-ok: [localhost4]
-ok: [localhost2]
+  ```bash
+  ansible-playbook -i host.yml ping.yml 
+  ```
 
-PLAY RECAP **********************************************************************************************************************************************************************************************************************************
-localhost1                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
-localhost2                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
-localhost3                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
-localhost4                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
-localhost5                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+- 出力例
 
-r_ota [ ~ ]$ 
-```
+  ```bash
 
-  -> PLAY RECAPが表示されてOKの対象数も数えやすい！イイ！
+  ```bash
+  r_ota [ ~ ]$ ansible-playbook -i host.yml ping.yml 
 
-### 🎉結論(再掲)
+  PLAY [all] **********************************************************************************************************************************************************************************************************************************
+
+  TASK [ping] *********************************************************************************************************************************************************************************************************************************
+  ok: [localhost3]
+  ok: [localhost5]
+  ok: [localhost1]
+  ok: [localhost4]
+  ok: [localhost2]
+
+  PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+  localhost1                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+  localhost2                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+  localhost3                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+  localhost4                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+  localhost5                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+  r_ota [ ~ ]$ 
+  ```
+
+- 結果 -> PLAY RECAPが表示されてOKの対象数も数えやすい！イイ！
+
+## 🎉結論
 
 ターゲットホストが多いときに、ansibleでping moduleを使う際は
 
@@ -175,7 +164,7 @@ ansible-playbook -i 【インベントリファイル】 【ping module用プレ
 
 ## ✅感想
 
-なにかと使う疎通確認。だけど毎回「えっ？エラー！？なんだっけ... allつけるんだっけ...」わからん！あと、結果が見にくい！！となっていたので、今回まとめてみました。
+なにかと使う疎通確認。だけど毎回「えっ？エラー！？なんだっけ... allつけるんだっけ...」わからん！あと、結果が見にくい！！となっていたので、今回検証してみて理解が深まりました。
 
 最後までお読みいただきありがとうございました。
 
