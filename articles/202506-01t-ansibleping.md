@@ -5,6 +5,7 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["ansible"]
 published: true
 publication_name: "ap_com"
+date: 2025-06-03 12:29:20
 url: "https://zenn.dev/roota5666/articles/202506-01t-ansibleping"
 author: roota5666
 description: "ansible ping モジュールを使った疎通確認でansible-playbookコマンドでplaybookを指定した場合と、直接ansibleコマンドでmoduleを指定した場合の出力結果の見やすさにフォーカスして結果を比較してみた"
